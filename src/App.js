@@ -10,10 +10,9 @@ function App() {
   return (
     <Router>
       <nav className="navbar">
-        <div className="logo-area">
+        <Link to="/" className="logo-link">
           <img src="/logo.png" alt="Roomino logo" className="logo" />
-          <span className="brand-name">Roomino</span>
-        </div>
+        </Link>
         <div className="nav-links">
           <Link to="/" className="nav-link">Strona główna</Link>
           <Link to="/why-roomino" className="nav-link">Dlaczego Roomino</Link>

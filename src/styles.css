@@ -90,3 +90,20 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
