@@ -1,5 +1,6 @@
 
 import React from 'react';
+import '../styles.css';
 
 const rooms = [
   {
@@ -7,7 +8,7 @@ const rooms = [
     title: "Pokój 1-osobowy w centrum Krakowa",
     city: "Kraków",
     price: 1300,
-    image: "https://via.placeholder.com/300x200?text=Pokoj+1",
+    image: "https://source.unsplash.com/400x300/?room,krakow",
     description: "Przytulny pokój blisko rynku, idealny dla studenta.",
     available: true
   },
@@ -16,7 +17,7 @@ const rooms = [
     title: "2-pokojowe mieszkanie w Warszawie",
     city: "Warszawa",
     price: 2600,
-    image: "https://via.placeholder.com/300x200?text=Pokoj+2",
+    image: "https://source.unsplash.com/400x300/?apartment,warsaw",
     description: "Nowoczesne mieszkanie z balkonem i windą.",
     available: true
   },
@@ -25,7 +26,7 @@ const rooms = [
     title: "Pokój do wynajęcia – Gdańsk Wrzeszcz",
     city: "Gdańsk",
     price: 1100,
-    image: "https://via.placeholder.com/300x200?text=Pokoj+3",
+    image: "https://source.unsplash.com/400x300/?room,gdansk",
     description: "Pokój w mieszkaniu studenckim blisko SKM.",
     available: false
   }
@@ -33,25 +34,21 @@ const rooms = [
 
 export default function Rooms() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Oferty pokoi i mieszkań</h1>
-      <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
+    <div className="room-list-container">
+      <h1>Dostępne pokoje i mieszkania</h1>
+      <div className="room-list">
         {rooms.map(room => (
-          <div key={room.id} style={{
-            border: '1px solid #ddd',
-            borderRadius: '10px',
-            padding: '1rem',
-            width: '300px',
-            backgroundColor: room.available ? '#fff' : '#f8f8f8'
-          }}>
-            <img src={room.image} alt={room.title} loading="lazy" style={{ width: '100%', borderRadius: '6px' }} />
-            <h2>{room.title}</h2>
-            <p><strong>Miasto:</strong> {room.city}</p>
-            <p><strong>Cena:</strong> {room.price} PLN</p>
-            <p>{room.description}</p>
-            <p style={{ color: room.available ? 'green' : 'red' }}>
-              {room.available ? "Dostępny" : "Niedostępny"}
-            </p>
+          <div key={room.id} className="room-card">
+            <img src={room.image} alt={room.title} loading="lazy" />
+            <div className="room-info">
+              <h2>{room.title}</h2>
+              <p><strong>Miasto:</strong> {room.city}</p>
+              <p><strong>Cena:</strong> {room.price} PLN</p>
+              <p>{room.description}</p>
+              <p className={room.available ? 'available' : 'unavailable'}>
+                {room.available ? "Dostępny" : "Niedostępny"}
+              </p>
+            </div>
           </div>
         ))}
       </div>
