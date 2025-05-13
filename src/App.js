@@ -12,7 +12,7 @@ function App() {
     <Router>
       <nav className="navbar">
         <Link to="/" className="logo-link">
-          <img src="/logo.png" alt="Roomino logo" className="logo" />
+          <img loading="lazy" src="/logo.png" alt="Roomino logo" className="logo" />
         </Link>
         <div className="nav-links">
           <Link to="/" className="nav-link">Strona główna</Link>
