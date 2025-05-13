@@ -125,3 +125,13 @@ body {
 .announcement button {
   margin-left: 0.5rem;
 }
+
+
+/* Poprawiona sekcja nawigacji */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+}
