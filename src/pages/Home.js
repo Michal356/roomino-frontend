@@ -4,8 +4,8 @@ import React from "react";
 
 export default function Home() {
   return (
-      
-      <Helmet>
+  <>
+<Helmet>
         <title>Wynajem Pokoi i Mieszkań | Roomino – Komfortowe Zakwaterowanie w Twoim Mieście</title>
         <meta name="description" content="Szukasz mieszkania lub pokoju do wynajęcia? Roomino to nowoczesna platforma z komfortowymi ofertami najmu. Szybka rezerwacja online. Sprawdź dostępność!" />
       </Helmet>
@@ -27,5 +27,6 @@ export default function Home() {
         Kontakt: <a href="mailto:kontakt@roomino.pl">kontakt@roomino.pl</a>
       </footer>
     </div>
-  );
+  </>
+);
 }
