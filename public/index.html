@@ -8,5 +8,16 @@
   </head>
   <body>
     <div id="root"></div>
-  </body>
+  
+<script>
+  try {
+    if (typeof browser !== "undefined") {
+      browser.start();
+    }
+  } catch (e) {
+    console.warn("Zewnętrzny skrypt zignorowany:", e);
+  }
+</script>
+
+</body>
 </html>
