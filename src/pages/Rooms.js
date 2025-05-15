@@ -2,52 +2,63 @@
 import React from 'react';
 import '../styles.css';
 
-const rooms = [
+const listings = [
   {
     id: 1,
-    title: "Pokój 1-osobowy w centrum Krakowa",
-    city: "Kraków",
-    price: 1300,
-    image: "https://source.unsplash.com/400x300/?room,krakow",
-    description: "Przytulny pokój blisko rynku, idealny dla studenta.",
-    available: true
+    title: 'Nowoczesny pokój w centrum Warszawy',
+    city: 'Warszawa',
+    price: 1600,
+    image: 'https://source.unsplash.com/600x400/?apartment,modern',
+    rating: 4.8,
+    reviews: 31,
+    available: true,
   },
   {
     id: 2,
-    title: "2-pokojowe mieszkanie w Warszawie",
-    city: "Warszawa",
-    price: 2600,
-    image: "https://source.unsplash.com/400x300/?apartment,warsaw",
-    description: "Nowoczesne mieszkanie z balkonem i windą.",
-    available: true
+    title: 'Mieszkanie 2-pokojowe blisko morza',
+    city: 'Gdańsk',
+    price: 2400,
+    image: 'https://source.unsplash.com/600x400/?flat,sea',
+    rating: 4.6,
+    reviews: 22,
+    available: true,
   },
   {
     id: 3,
-    title: "Pokój do wynajęcia – Gdańsk Wrzeszcz",
-    city: "Gdańsk",
+    title: 'Pokój jednoosobowy dla studenta',
+    city: 'Kraków',
     price: 1100,
-    image: "https://source.unsplash.com/400x300/?room,gdansk",
-    description: "Pokój w mieszkaniu studenckim blisko SKM.",
-    available: false
-  }
+    image: 'https://source.unsplash.com/600x400/?room,student',
+    rating: 4.2,
+    reviews: 10,
+    available: false,
+  },
 ];
 
 export default function Rooms() {
   return (
-    <div className="room-list-container">
-      <h1>Dostępne pokoje i mieszkania</h1>
-      <div className="room-list">
-        {rooms.map(room => (
-          <div key={room.id} className="room-card">
+    <div className="rooms-wrapper">
+      <h1 className="section-title">Wybierz pokój lub mieszkanie</h1>
+      <div className="room-grid">
+        {listings.map(room => (
+          <div key={room.id} className="room-card-wide">
             <img src={room.image} alt={room.title} loading="lazy" />
-            <div className="room-info">
+            <div className="room-details">
               <h2>{room.title}</h2>
-              <p><strong>Miasto:</strong> {room.city}</p>
-              <p><strong>Cena:</strong> {room.price} PLN</p>
-              <p>{room.description}</p>
-              <p className={room.available ? 'available' : 'unavailable'}>
-                {room.available ? "Dostępny" : "Niedostępny"}
+              <p className="room-meta">
+                {room.city} • {room.price} PLN
               </p>
+              <p className="room-status">
+                {room.available ? (
+                  <span className="available">Dostępny</span>
+                ) : (
+                  <span className="unavailable">Niedostępny</span>
+                )}
+              </p>
+              <p className="room-rating">
+                Ocena: <strong>{room.rating}</strong> ({room.reviews} opinii)
+              </p>
+              <a href="#" className="room-btn">Zobacz szczegóły</a>
             </div>
           </div>
         ))}
